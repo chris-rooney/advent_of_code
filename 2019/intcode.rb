@@ -18,11 +18,13 @@ class Intcode
 
   def getInput()
     # TODO run() w/ debug flag
-    # puts "getInput: #{inputs.to_s}"
     if inputs.empty?
+      # puts "getInput: wait for input"
       return nil
     else
-      return inputs.shift
+      input = inputs.shift
+      # puts "getInput: #{input}"
+      return input
     end
   end
 
@@ -167,6 +169,7 @@ class Intcode
 
   def queue_input(input)
     @inputs << input
+    @paused = false
   end
 
   def resume_with_input(input)
