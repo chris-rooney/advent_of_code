@@ -12,7 +12,7 @@ max = 0
   for phase in perm
     amp = Intcode.new(program, [phase, thrust])
     outputs = amp.run
-    thrust = outputs[0]
+    thrust = outputs[1].last
   end
   # puts "#{perm.to_s}: #{thrust}"
   max = thrust > max ? thrust : max
